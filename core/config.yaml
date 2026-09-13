@@ -1,0 +1,46 @@
+aegis:
+  version: "1.0.0"
+  codename: "AEGIS"
+  full_name: "Autonomous Electronic Governance & Intelligence System"
+  classification: "UNCLASSIFIED"
+  operator: "darknode"
+
+  modules:
+    confirm_before_active: true
+    confirm_before_exploit: true
+    max_threads: 10
+    timeout: 300
+    evidence_dir: "evidence"
+
+  reporting:
+    format: "markdown"
+    include_evidence: true
+    include_commands: true
+    classification_banner: true
+    author: "AEGIS Automated Report"
+
+  ai:
+    provider: "ollama"
+    model: "llama3.1"
+    endpoint: "http://localhost:11434"
+    timeout: 120
+    enabled: true
+
+  database:
+    path: "missions/aegis.db"
+
+  logging:
+    level: "INFO"
+    file: "aegis.log"
+    evidence_hashing: "sha256"
+    audit_trail: true
+
+  network:
+    interface: "auto"
+    proxy: ""
+    dns_servers: []
+    tor_enabled: false
+
+  alerts:
+    critical_notify: true
+    sound: false
